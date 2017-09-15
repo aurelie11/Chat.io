@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/style.css">
-  <title>Mon Chat io</title>
+  <title>Chat.io</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
-  <ul id="message"></ul>
-
-  <form action="" id="chat">
-    <input type="text" id="chat-text" placeholder="Votre message...">
-    <button type="submit">Envoi</button>
-  </form>
-
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-  <script src="/js/app.js"></script>
-</body>
+  <body>
+    <h1>Chat.io</h1>
+    <form id="login">
+      <label for="username">Username</label>
+      <input type="text" id="username">
+      <button type="submit">Send</button>
+    </form>
+    <form id="chat" class="hidden">
+      <label for="chat-text">Message</label>
+      <input type="text" name="" id="chat-text" value="Hello !">
+      <button type="submit">Send</button>
+    </form>
+    <ul id="chat-body"></ul>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
 </html>
