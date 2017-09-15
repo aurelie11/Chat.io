@@ -11,4 +11,9 @@
     message.val('');
   })
 
+  socket.on('message', function(message){
+    $('#message').append('<li>'+message+'</li>')
+  })
+
 })()
+

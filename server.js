@@ -5,8 +5,7 @@ var socket = require('socket.io');
 var server = app.listen(8000);
 var io = socket(server);
 var ent = require('ent');
-var encode = require('ent/encode');
-var decode = require('ent/decode');
+
 
 
 app.use(express.static('public'));
@@ -19,7 +18,7 @@ io.on('connection', function(socket){
   })
 
   socket.on('message-send', function(msg){
-      console.log('msg')
+    msg = ent.encode(msg);
+      io.emit('message', msg)
     })
 })
-
